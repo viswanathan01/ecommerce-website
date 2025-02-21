@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import { motion, AnimatePresence } from "framer-motion";
 import RelatedProducts from "../components/RelatedProducts";
 import QuantitySelector from "../components/QuantitySelector";
+import { toast } from "react-toastify"; 
 
 const fadeInVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,6 +24,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
   const [showDescription, setShowDescription] = useState(true);
+  const [isAddedToCart, setIsAddedToCart] = useState(false); 
+  const navigate = useNavigate(); 
 
   const fetchProductData = async () => {
     const product = products.find((item) => item._id === productId);
@@ -36,6 +39,21 @@ const Product = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     fetchProductData();
   }, [productId, products]);
+
+  const handleAddToCart = () => {
+    if (!size) {
+      toast.error("Please select a size before adding to cart.");
+      return;
+    }
+
+    addToCart(productData._id, size, quantity); 
+    setIsAddedToCart(true); 
+    toast.success("Product added to cart!"); 
+  };
+
+  const handleGoToCart = () => {
+    navigate("/cart"); 
+  };
 
   if (!productData) {
     return <div className="opacity-0"></div>;
@@ -53,6 +71,7 @@ const Product = () => {
           variants={fadeInVariants}
           className="flex gap-12 sm:gap-12 flex-col sm:flex-row"
         >
+
           <motion.div
             variants={fadeInVariants}
             className="flex-1 flex flex-col-reverse gap-3 sm:flex-row"
@@ -156,9 +175,10 @@ const Product = () => {
             <motion.div variants={fadeInVariants}>
               <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
             </motion.div>
+
             <motion.div variants={fadeInVariants}>
               <motion.button
-                onClick={() => addToCart(productData._id, size, quantity)}
+                onClick={isAddedToCart ? handleGoToCart : handleAddToCart} 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="cursor-pointer bg-gradient-to-r from-green-500 to-emerald-600 
@@ -168,12 +188,13 @@ const Product = () => {
               hover:scale-105 hover:shadow-xl active:scale-95 
               border-2 border-transparent hover:border-white duration-300"
               >
-                ADD TO CART
+                {isAddedToCart ? "GO TO CART" : "ADD TO CART"}
               </motion.button>
             </motion.div>
 
             <hr className="mt-8 sm:w-4/5 border-[#d4d4d4]" />
 
+          
             <div className="text-sm text-[#6b4e2e] mt-5 flex flex-col gap-1">
               <p>✅ 100% Original Product.</p>
               <p>✅ Cash On Delivery available.</p>
