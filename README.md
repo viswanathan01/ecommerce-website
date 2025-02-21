@@ -1,7 +1,7 @@
 # E-Commerce Product Page
 
 ## Overview
-This project is a sleek and interactive e-commerce product collection page built using **React** and **Framer Motion** for animations. It offers product filtering, sorting, and a responsive layout to enhance user experience.
+This is a modern, interactive E-Commerce Product Page built using React, Framer Motion, and Tailwind CSS. The page dynamically fetches and displays product details, allowing users to view images, select sizes, adjust quantities, and add products to their cart.
 
 ---
 
