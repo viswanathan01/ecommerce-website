@@ -33,8 +33,8 @@ This is a modern, interactive E-Commerce Product Page built using React, Framer 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repo.git
-   cd project-folder
+   git clone https://github.com/viswanathan01/ecommerce-website.git
+   cd frontend
 
 2. **Install Dependencies**
    Run the following command to install required packages:
