@@ -13,7 +13,7 @@ This is a modern, interactive E-Commerce Product Page built using React, Framer 
 - **Sorting** – Sort products by price (Low to High, High to Low) or relevance.
 - **Image Preview** – Clickable image thumbnails to change the main display image.
 - **Quantity Selector** – Adjust the quantity before adding to the cart.
-- **Product Reviews** – Toggle between product description and customer reviews.
+- **Product Reviews** – Toggle between fake product description and customer reviews.
 
 ### Cart Integration
 - Add products to the cart with selected options.
