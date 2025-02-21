@@ -7,19 +7,15 @@ This is a modern, interactive E-Commerce Product Page built using React, Framer 
 
 ## Features
 
-### Collection Page
+
 - **Dynamic Filtering** – Filter products by categories (Men, Women, Kids) and subcategories (Topwear, Bottomwear, Winterwear).
 - **Search Functionality** – Find products easily by name.
 - **Sorting** – Sort products by price (Low to High, High to Low) or relevance.
 - **Image Preview** – Clickable image thumbnails to change the main display image.
 - **Quantity Selector** – Adjust the quantity before adding to the cart.
 - **Product Reviews** – Toggle between fake product description and customer reviews.
-
-### Cart Integration
 - Add products to the cart with selected options.
 - View total price dynamically.
-
-### UI
 - **Framer Motion Animations** – Smooth transitions, hover effects, and interactive animations.
 - **Responsive Design** – Fully optimized for both desktop and mobile.
 
