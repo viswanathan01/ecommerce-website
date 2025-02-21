@@ -19,7 +19,7 @@ This project is a sleek and interactive e-commerce product collection page built
 - Add products to the cart with selected options.
 - View total price dynamically.
 
-### UI & UX Enhancements
+### UI
 - **Framer Motion Animations** – Smooth transitions, hover effects, and interactive animations.
 - **Responsive Design** – Fully optimized for both desktop and mobile.
 
@@ -29,6 +29,7 @@ This project is a sleek and interactive e-commerce product collection page built
 - **React** – Component-based architecture.
 - **Framer Motion** – Enhances UI with smooth animations.
 - **Tailwind CSS** – Simplifies styling and responsiveness.
+- **React tostify** – For Notification inside page.
 
 ---
 
@@ -48,6 +49,8 @@ This project is a sleek and interactive e-commerce product collection page built
    ```bash 
       npm install react framer-motion react-icons
       npm install tailwindcss postcss autoprefixer
+      npm install --save react-toastify
+
 4. **Start the Development Server**:
 ```bash
       npm start
