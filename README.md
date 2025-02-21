@@ -40,6 +40,14 @@ This project is a sleek and interactive e-commerce product collection page built
    cd project-folder
 
 2. **Install Dependencies**
-Run the following command to install required packages:
+   Run the following command to install required packages:
+   ```bash
+   npm install
+3. **Install Required Packages**
+   If any package is missing, install them manually:
+   ```bash 
+      npm install react framer-motion react-icons
+      npm install tailwindcss postcss autoprefixer
+4. **Start the Development Server**:
 ```bash
-npm install
+      npm start
